@@ -1,0 +1,18 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.event_img {
+    width: 100%;
+    height: 30%;
+}
