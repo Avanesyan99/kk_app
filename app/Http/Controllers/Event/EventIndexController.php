@@ -14,7 +14,7 @@ class EventIndexController extends BaseController
 {
     public function __invoke()
     {
-        $events = Event::all();
+        $events = Event::paginate(5);
         return view('event.index', compact('events'));
     }
 }

@@ -14,7 +14,6 @@ class FighterAddController extends BaseController
     public function __invoke()
     {
         $countries = Country::all();
-        $categories = Category::all();
-        return view('fighter.create', compact('countries', 'categories'));
+        return view('fighter.create', compact('countries'));
     }
 }

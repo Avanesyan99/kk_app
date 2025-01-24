@@ -4,7 +4,7 @@ namespace App\Http\Requests\Fighter;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FighterStoreRequest extends FormRequest
+class FighterFilterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,12 +22,12 @@ class FighterStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'f_name' => 'required | string',
-            's_name' =>'required | string',
+            'f_name' => 'string',
+            's_name' =>'string',
             'country_id' => '',
-            'weight' => 'required | integer',
-            'age' => 'required | integer',
-            'titles' => 'required | string'
+            'weight' => 'integer',
+            'age' => 'integer',
+            'titles' => 'string'
         ];
     }
 }

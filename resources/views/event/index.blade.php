@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
+<button type="button" class="mt-3 btn btn-success"><a href="{{ route('admin_event.create') }}" class="nav-link">Add Events Now!</a></button>
 
 @foreach($events as $event) 
 <div class="card mb-3">
@@ -15,8 +16,10 @@
     </div>
 @endforeach
 
+    <div class="mt-3">
+        {{ $events->links() }}
+    </div>
 
-    <button type="button" class="mt-3 btn btn-success"><a href="{{ route('admin_event.create') }}" class="nav-link">Add Events Now!</a></button>
     
 
 @endsection

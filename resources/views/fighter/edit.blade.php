@@ -39,17 +39,6 @@
         </div> 
 
         <div class="mb-3">
-            <label for="category" class="form-label h2">Category</label>
-            <select class="form-select" id="category" name="category_id">
-                @foreach($categories as $category) :
-                <option
-                    {{ old('category_id') == $category->id ? 'selected' : '' }}
-                value="{{ $category->id }}" >{{ $category->title }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="mb-3">
             <label for="weight" class="form-label h2">Weight</label>
             <input
             type="nummber" name="weight" class="form-control" id="weight" value="{{ $fighter->weight }}">

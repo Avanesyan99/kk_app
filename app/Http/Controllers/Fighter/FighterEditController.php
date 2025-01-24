@@ -14,7 +14,6 @@ class FighterEditController extends BaseController
     public function __invoke(Fighter $fighter)
     {
         $countries = Country::all();
-        $categories = Category::all();
-        return view('fighter.edit', compact('fighter', 'countries', 'categories'));
+        return view('fighter.edit', compact('fighter', 'countries'));
     }
 }

@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Country;
 use App\Models\Category;
 use App\Models\Tatami;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Fighter extends Model
 {
-
+    use HasFactory;
     protected $guarded = '';
 
     public function country() {

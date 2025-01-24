@@ -25,7 +25,6 @@ class FighterUpdateRequest extends FormRequest
             'f_name' => 'required | string',
             's_name' =>'required | string',
             'country_id' => '', 
-            'category_id' => '',
             'weight' => 'required | integer',
             'age' => 'required | integer',
             'titles' => 'required | string',
