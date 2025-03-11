@@ -17,6 +17,6 @@ class FighterUpdateController extends BaseController
         $data = $request->validated();
         $this->service->update($fighter, $data);
         
-        return redirect()->route('admin_fighter.show', $fighter->id);
+        return redirect()->route('fighter.show', $fighter->id);
     }
 }

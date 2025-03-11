@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers\Category;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Category\BaseController;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Http\Requests\Category\CategoryStoreRequest;
 
-class CategoryIndexController extends Controller
+
+class CategoryStoreController extends BaseController
 {
-    public function __invoke()
+    public function __invoke(CategoryStoreRequest $request)
     {
-        $categories = Category::all();
-        return view('category.index', compact('categories'));
+        $data = $request->validated();
+        $this->service->store($data);
+        return redirect()->route('admin_category.index' );
     }
 
 }

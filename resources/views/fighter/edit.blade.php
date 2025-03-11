@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-<form action="{{ route('admin_fighter.update', $fighter->id) }}" method="post">
+<form action="{{ route('fighter.update', $fighter->id) }}" method="post">
         @csrf
         @method('patch')
         <div class="mb-3">

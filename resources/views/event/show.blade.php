@@ -54,10 +54,10 @@
   <nav aria-label="...">
     <ul class="pagination pagination-sm">
       <li class="page-item active" aria-current="page">
-        <a class="page-link" href="{{ route('admin_event.index') }}">Back</a>
+        <a class="page-link" href="{{ route('event.index') }}">Back</a>
       </li>
-      <li class="page-item"><a class="page-link" href="{{ route('admin_event.edit', $event->id) }}">Edit</a></li>
-      <form action="{{ route('admin_event.delete', $event->id) }}" method="post">
+      <li class="page-item"><a class="page-link" href="{{ route('event.edit', $event->id) }}">Edit</a></li>
+      <form action="{{ route('event.delete', $event->id) }}" method="post">
           @csrf
           @method('delete')
           <input type="submit" class="page-link" value="Delete" name="delete_btn"/>

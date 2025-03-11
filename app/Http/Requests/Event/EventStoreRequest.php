@@ -23,11 +23,19 @@ class EventStoreRequest extends FormRequest
     {
         return [
             'title' => 'required | string',
-            'type' => 'required | string',
+            'type' => 'required | in:tournament, camp, seminar',
+            'available' => 'required | in:international, teams-only',
             'image' => 'required | file | mimes:jpg,jpeg,png | max:10250',
-            'place' => 'required | string',
-            'start_at' => 'required | date',
-            'is_active' => 'boolean'
+            'country_id' => '',
+            'date' => 'required | date | after_or_equal:today',
+            'registration_start' => 'required | date | after_or_equal:today',
+            'registration_end' => 'required | date | after:registration_start',
+            'is_active' => 'boolean',
+            'phone' => 'regex:/^\+?[0-9]{10,15}$/',
+            'email' => 'email | unique:users,email',
+            'websiteUrl' => 'url',
+            'address' => 'string',
+            'info' => 'required | text'
         ];
     }
 }

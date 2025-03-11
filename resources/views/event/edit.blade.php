@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-<form action="{{ route('admin_event.update', $event->id) }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('event.update', $event->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('patch')
         <div class="mb-3">

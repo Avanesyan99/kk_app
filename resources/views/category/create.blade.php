@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-<form action="{{ route('admin_category.store') }}" method="post">
+<form action="{{ route('category.store') }}" method="post">
         @csrf
         @method('post')
         <div class="mb-3">
@@ -13,7 +13,17 @@
             @error('title')
             <p class="text-danger">{{ $message }}</p>
             @enderror
-        </div> 
+        </div>
+        <div class="mb-3">
+            <label for="weight" class="form-label h2">Weight</label>
+            <input
+                value="{{ old('weight') }}"
+            type="text" name="weight" class="form-control" id="weight">
+
+            @error('weight')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
 
         
 

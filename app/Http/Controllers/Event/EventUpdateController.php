@@ -17,6 +17,6 @@ class EventUpdateController extends BaseController
     {
         $data = $request->validated();
         $this->service->update($data, $event, $request);
-        return redirect()->route('admin_event.show', $event->id);
+        return redirect()->route('event.show', $event->id);
     }
 }

@@ -23,11 +23,12 @@ class EventUpdateRequest extends FormRequest
     {
         return [
             'title' => 'required | string',
-            'type' => 'required | string',
+            'type' => 'required | in:tournament, camp, seminar',
             'image' => 'required | file | mimes:jpg,jpeg,png | max:10250',
-            'place' => 'required | string',
-            'start_at' => 'required | date',
-            'is_active' => 'boolean'
+            'country_id' => '',
+            'date' => 'required | date | after_or_equal:today',
+            'is_active' => 'boolean',
+            'info' => 'required | string'
         ];
     }
 }

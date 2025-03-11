@@ -6,6 +6,9 @@ use App\Http\Requests\Event\EventStoreRequest;
 use App\Http\Requests\Event\EventUpdateRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Event;
+use App\Models\Country;
+use App\Models\Fighter;
+use App\Models\Category;
 
 
 class Service {
@@ -27,5 +30,31 @@ class Service {
         }
         $data['image'] = $path;
         $event->update($data);
+    }
+
+    public function addFighters($eventId, $request) {
+        $event = Event::find($eventId);
+        $countries = Country::all();
+        $sortBy = $request->query('sort_by', 'name');
+        $order = $request->query('order', 'asc');
+
+        $fighters = Fighter::all()->map(function ($fighter) use ($event) {
+            $fighter->checked = $event->fighters->contains($fighter->id) ? 1 : 0;
+            return $fighter;
+        });
+
+        // Обрабатываем сортировку по чекбоксам
+        if ($sortBy === 'checked') {
+            $fighters = $fighters->sortBy($sortBy, SORT_REGULAR, $order === 'desc');
+        } else {
+            $fighters = $fighters->sortBy($sortBy, SORT_REGULAR, $order === 'desc');
+        }
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('partials.fighters_table', compact('event', 'fighters'))->render()
+            ]);
+        }
+
     }
 }

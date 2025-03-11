@@ -45,10 +45,10 @@
 <nav aria-label="...">
   <ul class="pagination pagination-sm">
     <li class="page-item active" aria-current="page">
-      <a class="page-link" href="{{ route('admin_fighter.index') }}">Back</a>
+      <a class="page-link" href="{{ route('fighter.index') }}">Back</a>
     </li>
-    <li class="page-item"><a class="page-link" href="{{ route('admin_fighter.edit', $fighter->id) }}">Edit</a></li>
-    <form action="{{ route('admin_fighter.delete', $fighter->id) }}" method="post">
+    <li class="page-item"><a class="page-link" href="{{ route('fighter.edit', $fighter->id) }}">Edit</a></li>
+    <form action="{{ route('fighter.delete', $fighter->id) }}" method="post">
         @csrf
         @method('delete')
         <input type="submit" class="page-link" value="Delete" name="delete_btn"/>

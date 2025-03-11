@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Category;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Category\BaseController;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
-class CategoryIndexController extends Controller
+class CategoryIndexController extends BaseController
 {
     public function __invoke()
     {

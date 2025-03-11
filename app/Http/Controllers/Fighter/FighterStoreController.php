@@ -16,6 +16,6 @@ class FIghterStoreController extends BaseController
     {
         $data = $request->validated();
         $this->service->store($data);
-        return redirect()->route('admin_fighter.index');
+        return redirect()->route('fighter.index');
     }
 }

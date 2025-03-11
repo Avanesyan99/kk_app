@@ -15,6 +15,6 @@ class EventDestroyController extends BaseController
     public function __invoke(Event $event)
     {
         $event->delete();
-        return redirect()->route('admin_event.index');
+        return redirect()->route('event.index');
     }
 }

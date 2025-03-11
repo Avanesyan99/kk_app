@@ -13,16 +13,43 @@ return new class extends Migration
     {
         Schema::create('fighters', function (Blueprint $table) {
             $table->id();
-            $table->string('f_name');
-            $table->string('s_name');
-            $table->unsignedInteger('country_id');
-            $table->unsignedSmallInteger('category_id');
-            $table->unsignedSmallInteger('weight');
-            $table->unsignedSmallInteger('age');
-            $table->text('titles')->nullable();
-            $table->unsignedInteger('tatami_id')->nullable();
 
+            // Important
+            $table->string('first_name');
+            $table->string('middle_name')->nullable();
+            $table->string('last_name');
+            $table->string('imageUrl')->nullable();
+            $table->date('birth_date');
+            $table->enum('gender', ['m', 'f'])->default('m');
+            
+            // Location
+            $table->unsignedBigInteger('country_id');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+            $table->string('address')->nullable();
+            $table->string('region')->nullable();
+            $table->string('city')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            
+            
+            // General Info 
+            $table->unsignedTinyInteger('weight');
+            $table->unsignedTinyInteger('height')->nullable();
+            $table->text('titles')->nullable();
+            $table->string('grade')->nullable();
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->string('coach')->nullable();
+            $table->string('school')->nullable();
+            
+            // Contacts
+            $table->string('phone', 20)->nullable();
+            $table->string('email')->nullable();
+            
+            
             $table->timestamps();
+            
+
         });
     }
 

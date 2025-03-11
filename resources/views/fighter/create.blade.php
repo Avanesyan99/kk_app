@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-<form action="{{ route('admin_fighter.store') }}" method="post">
+<form action="{{ route('fighter.store') }}" method="post">
         @csrf
         @method('post')
         <div class="mb-3">

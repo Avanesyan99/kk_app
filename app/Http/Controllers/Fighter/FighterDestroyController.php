@@ -14,6 +14,6 @@ class FighterDestroyController extends BaseController
     public function __invoke(Fighter $fighter)
     {
         $fighter->delete();
-        return redirect()->route('admin_fighter.index');
+        return redirect()->route('fighter.index');
     }
 }

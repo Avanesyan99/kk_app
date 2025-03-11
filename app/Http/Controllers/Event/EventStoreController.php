@@ -18,6 +18,6 @@ class EventStoreController extends BaseController
     {
         $data = $request->validated();
         $this->service->store($data, $request);
-        return redirect()->route('admin_event.index');
+        return redirect()->route('event.index');
     }
 }

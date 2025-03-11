@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-<form action="{{ route('admin_event.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('post')
         <div class="mb-3">

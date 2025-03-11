@@ -8,11 +8,68 @@
 @import 'bootstrap/scss/bootstrap';
 
 body {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1400px!important;
+    margin: 0 auto!important;
 }
 
 .event_img {
     width: 100%;
-    height: 50vh;
+    height: 200px;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: space-between;
+}
+.search-part {
+    width: 50%;
+}
+
+
+ :root {
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: white;
+    --select-bg: rgba(255, 255, 255, 0.2);
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  /* <select> styles */
+  .search-select {
+    /* Reset */
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 100%;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Remove IE arrow */
+    &::-ms-expand {
+      display: none;
+    }
+    /* Remove focus outline */
+    &:focus {
+      outline: none;
+    }
+    /* <option> colors */
+    .search-select-option {
+        transition: 1s;
+      color: #ffd4d4;
+      background-color: #454d55!important;
+    }
+  }
+@media(max-width: 768px) {
+    
+    .form-title {
+        text-align: center;
+    }
 }
